@@ -12,9 +12,7 @@
 | first_kana         | string  | null: false               |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
-| year_id            | integer | null: false               |
-| month_id           | integer | null: false               |
-| day_id             | integer | null: false               |
+| birthday_id        | date    | null: false               |
 
 
 ### Association
@@ -26,7 +24,7 @@
 
 |Column            |Type        |Options                         |
 |------------------|------------|--------------------------------|
-| title            | text       | null: false                    |
+| title            | string     | null: false                    |
 | detail           | text       | null: false                    |
 | category_id      | integer    | null: false                    |
 | condition_id     | integer    | null: false                    |
@@ -61,10 +59,10 @@
 |Column          |Type        |Options                         |
 |----------------|------------|--------------------------------|
 | postcode       | string     | null: false                    |
-| prefecture_id  | integer    | null: false                    |
+| place_id       | integer    | null: false                    |
 | city           | string     | null: false                    |
 | blocknum       | string     | null: false                    |
-| apartment      | string     | null: true                     |
+| apartment      | string     |                                |
 | phone          | string     | null: false                    |
 | order          | references | null: false, foreign_key: true |
 
