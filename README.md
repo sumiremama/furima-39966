@@ -62,8 +62,6 @@
 | blocknum       | string     | null: false                    |
 | apartment      | string     | null: true                     |
 | phone          | string     | null: false                    |
-| item           | references | null: false, foreign_key: true |
-| user           | references | null: false, foreign_key: true |
 | order          | references | null: false, foreign_key: true |
 
 
