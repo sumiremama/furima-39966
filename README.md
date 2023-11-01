@@ -3,14 +3,18 @@
 
 ## users
 
-|Column              |Type    |Options                    |
-|--------------------|--------|---------------------------|
-| name               | string | null: false               |
-| nickname           | string | null: false               |
-| katakana           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-| birthday           | date   | null: false               |
+|Column              |Type     |Options                    |
+|--------------------|---------|---------------------------|
+| fam_name           | string  | null: false               |
+| first_name         | string  | null: false               |
+| nickname           | string  | null: false               |
+| fam_kana           | string  | null: false               |
+| first_kana         | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| year_id            | integer | null: false               |
+| month_id           | integer | null: false               |
+| day_id             | integer | null: false               |
 
 
 ### Association
