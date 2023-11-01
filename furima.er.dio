@@ -1,13 +1,13 @@
 <mxfile host="65bd71144e">
     <diagram id="ugiCKfKdi6BzKHjMdxOx" name="ページ1">
-        <mxGraphModel dx="749" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="766" dy="725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=20;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="100" y="80" width="230" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="+ nickname&#10;+ fam_name&#10;+ first_name&#10;+ fam_kana&#10;+ first_kana&#10;+ email&#10;+ encrypted_password&#10;+ birthday_id" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="2" vertex="1">
+                <mxCell id="3" value="+ nickname&#10;+ fam_name&#10;+ first_name&#10;+ fam_kana&#10;+ first_kana&#10;+ email&#10;+ encrypted_password&#10;+ birthday" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="2" vertex="1">
                     <mxGeometry y="30" width="230" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=20;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">

@@ -12,7 +12,7 @@
 | first_kana         | string  | null: false               |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
-| birthday_id        | date    | null: false               |
+| birthday           | date    | null: false               |
 
 
 ### Association
@@ -31,7 +31,7 @@
 | shipcost_id      | integer    | null: false                    |
 | place_id         | integer    | null: false                    |
 | shipdate_id      | integer    | null: false                    |
-| price            | string     | null: false                    |
+| price            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
 
