@@ -12,15 +12,15 @@ class Item < ApplicationRecord
   validates :image, presence: true, unless: :was_attached?
   validates :title, presence: true
   validates :detail, presence: true
-  validates :category_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :condition_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :shipcost_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :place_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :shipdate_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :condition_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :shipcost_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :place_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :shipdate_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
-                    presence: { message: "can't be blank"}
+                    presence: { message: "can't be blank" }
 
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
 end

@@ -6,25 +6,25 @@ RSpec.describe User, type: :model do
   end
   describe 'ユーザー新規登録' do
     context '登録できる場合' do
-      it "nicknameとemail、fam_name、first_name、fam_kana、first_kana、birthday、passwordとpassword_confirmationが存在すれば登録できる" do
-        expect(@user).to be_valid
-      end
-      
-      it "passwordが6文字以上であれば登録できる" do
-        @user.password = "000aaa"
-        @user.password_confirmation = "000aaa"
+      it 'nicknameとemail、fam_name、first_name、fam_kana、first_kana、birthday、passwordとpassword_confirmationが存在すれば登録できる' do
         expect(@user).to be_valid
       end
 
-      it "fam_nameとfirst_nameが全角であれば登録できる" do
-        @user.fam_name = "山田"
-        @user.first_name = "たろう"
+      it 'passwordが6文字以上であれば登録できる' do
+        @user.password = '000aaa'
+        @user.password_confirmation = '000aaa'
         expect(@user).to be_valid
       end
 
-      it "fam_kanaとfirst_kanaが全角カナであれば登録できる" do
-        @user.fam_kana = "ヤマダ"
-        @user.first_kana = "タロウ"
+      it 'fam_nameとfirst_nameが全角であれば登録できる' do
+        @user.fam_name = '山田'
+        @user.first_name = 'たろう'
+        expect(@user).to be_valid
+      end
+
+      it 'fam_kanaとfirst_kanaが全角カナであれば登録できる' do
+        @user.fam_kana = 'ヤマダ'
+        @user.first_kana = 'タロウ'
         expect(@user).to be_valid
       end
 
