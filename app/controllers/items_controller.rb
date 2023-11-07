@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :ensure_current_user, only: [:edit, :update]
   before_action :set_item, only: [:show, :edit, :update]
+  before_action :ensure_current_user, only: [:edit, :update]
+  
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -47,13 +48,12 @@ class ItemsController < ApplicationController
     redirect_to new_user_session_path
   end
 
-  def ensure_current_user
-    item = Item.find(params[:id])
-    return unless item.user_id != current_user.id
-    redirect_to action: :index
-  end
-
   def set_item
     @item = Item.find(params[:id])
   end  
+
+  def ensure_current_user
+    return unless @item.user_id != current_user.id
+    redirect_to action: :index
+  end
 end
