@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update]
-  before_action :ensure_current_user, only: [:edit, :update]
+  before_action :contributor_confirmation, only: [:edit, :update]
   
 
   def index
@@ -35,6 +35,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to '/'
+  end  
+
   private
 
   def item_params
@@ -44,7 +50,6 @@ class ItemsController < ApplicationController
 
   def move_to_index
     return if user_signed_in?
-
     redirect_to new_user_session_path
   end
 
@@ -52,8 +57,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end  
 
-  def ensure_current_user
-    return unless @item.user_id != current_user.id
-    redirect_to action: :index
+  def contributor_confirmation
+    redirect_to '/' unless current_user == @item.user
   end
 end
