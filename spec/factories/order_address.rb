@@ -6,6 +6,7 @@ FactoryBot.define do
     blocknum { '青山1-1' }
     apartment { '東京ハイツ' }
     phone { '09012345678' }
+    token {"tok_abcdefghijk00000000000000000"}
 
     association :user_id
     association :item_id
