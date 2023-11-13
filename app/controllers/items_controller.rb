@@ -58,9 +58,10 @@ class ItemsController < ApplicationController
   end  
 
   def contributor_confirmation
-    redirect_to '/' unless current_user == @item.user
-    if current_user == @item.user && @item.order.present?
-      redirect_to root_path
+    redirect_to '/' unless user_signed_in?
+    @item = Item.find(params[:id])
+    if @item.nil?
+      redirect_to '/' unless current_user == @item.user && @item.order.nil?
     end
   end
 end
