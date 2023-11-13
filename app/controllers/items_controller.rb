@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update]
-  before_action :contributor_confirmation, only: [:edit, :update]
+  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
   
 
   def index
@@ -59,5 +59,8 @@ class ItemsController < ApplicationController
 
   def contributor_confirmation
     redirect_to '/' unless current_user == @item.user
+    if current_user == @item.user && @item.order.present?
+      redirect_to root_path
+    end
   end
 end
